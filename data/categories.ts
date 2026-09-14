@@ -22,18 +22,18 @@ export const categories: CategoryData[] = [
   {
     slug: "bride",
     title: "The Bride",
-    heroVideoOrImage: "/images/bride-hero.jpg",
+    heroVideoOrImage: "/nehal/images/bride-hero.jpg",
     manifesto: "Your journey to the perfect Phera ensemble begins here. We craft bespoke lehengas that weave your heritage into every thread.",
     products: [
       {
         name: "The Signature Lehenga",
         description: "Heavily embroidered custom lehengas for the main ceremony.",
-        imagePlaceholder: "/images/bride-lehenga.jpg"
+        imagePlaceholder: "/nehal/images/bride-lehenga.jpg"
       },
       {
         name: "Pre-Wedding Trousseau",
         description: "Vibrant ensembles for Haldi, Mehendi, and Sangeet.",
-        imagePlaceholder: "/images/bride-trousseau.jpg"
+        imagePlaceholder: "/nehal/images/bride-trousseau.jpg"
       }
     ],
     services: [
@@ -50,13 +50,13 @@ export const categories: CategoryData[] = [
   {
     slug: "groom",
     title: "The Groom",
-    heroVideoOrImage: "/images/groom-hero.jpg",
+    heroVideoOrImage: "/nehal/images/groom-hero.jpg",
     manifesto: "Regal elegance and sharp tailoring. Step into a masterpiece designed to complement the grandeur of your day.",
     products: [
       {
         name: "The Classic Sherwani",
         description: "Hand-crafted sherwanis featuring intricate zari or thread work.",
-        imagePlaceholder: "/images/groom-sherwani.jpg"
+        imagePlaceholder: "/nehal/images/groom-sherwani.jpg"
       }
     ],
     services: [
@@ -69,18 +69,18 @@ export const categories: CategoryData[] = [
   {
     slug: "bridesmaids",
     title: "Bridesmaids & Groomsmen",
-    heroVideoOrImage: "/images/bridesmaids-hero.jpg",
+    heroVideoOrImage: "/nehal/images/bridesmaids-hero.jpg",
     manifesto: "An entourage that complements the couple's vision. Coordinated elegance for your closest friends and family.",
     products: [
       {
         name: "Pastel Lehenga Sets",
         description: "Flowy, coordinated but distinct lehengas for the bridesmaids.",
-        imagePlaceholder: "/images/bridesmaids-product.jpg"
+        imagePlaceholder: "/nehal/images/bridesmaids-product.jpg"
       },
       {
         name: "Coordinated Groomsmen Looks",
         description: "Synchronized kurta pajama sets with varied rich silk Nehru jackets.",
-        imagePlaceholder: "/images/groomsmen-product.jpg"
+        imagePlaceholder: "/nehal/images/groomsmen-product.jpg"
       }
     ],
     services: [
@@ -93,18 +93,18 @@ export const categories: CategoryData[] = [
   {
     slug: "parents",
     title: "The Parents",
-    heroVideoOrImage: "/images/parents-hero.jpg",
+    heroVideoOrImage: "/nehal/images/parents-hero.jpg",
     manifesto: "Grace and dignity for the anchors of the family. Heritage pieces that reflect pride and joy.",
     products: [
       {
         name: "Heirloom Saree Collection",
         description: "Magnificent, traditional Kanjeevaram silk sarees with thick gold border work.",
-        imagePlaceholder: "/images/parents-saree.jpg"
+        imagePlaceholder: "/nehal/images/parents-saree.jpg"
       },
       {
         name: "Structured Bandhgalas",
         description: "Classic, elegant structured Bandhgala suits for fathers.",
-        imagePlaceholder: "/images/parents-bandhgala.jpg"
+        imagePlaceholder: "/nehal/images/parents-bandhgala.jpg"
       }
     ],
     services: [
@@ -117,13 +117,13 @@ export const categories: CategoryData[] = [
   {
     slug: "family",
     title: "The Whole Family",
-    heroVideoOrImage: "/images/family-hero.jpg",
+    heroVideoOrImage: "/nehal/images/family-hero.jpg",
     manifesto: "A unified vision of grandeur. We curate synchronized, high-fashion Indian outfits for the entire extended family.",
     products: [
       {
         name: "The Complete Package",
         description: "Tailored, synchronized outfits for every member, honoring individual style while maintaining the overarching theme.",
-        imagePlaceholder: "/images/family-package.jpg"
+        imagePlaceholder: "/nehal/images/family-package.jpg"
       }
     ],
     services: [

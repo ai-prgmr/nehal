@@ -20,7 +20,7 @@ export default function Home() {
         {/* 1. Hero Section (The Hook) */}
         <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-stone-900">
           <video
-            src="/landing-video.mp4"
+            src="/nehal/landing-video.mp4"
             autoPlay
             muted
             loop
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="mb-12 flex justify-center">
             <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-stone-100">
               <Image
-                src="/designer_headshot.png"
+                src="/nehal/nehal-profile.png"
                 alt="Nehal Desai - Lead Designer"
                 fill
                 className="object-cover"
@@ -73,7 +73,7 @@ export default function Home() {
           {/* Bride Card */}
           <Link href="/bride" className="group relative h-[50vh] md:h-[80vh] w-full block overflow-hidden bg-stone-800">
             <video
-              src="/bride.mp4"
+              src="/nehal/bride.mp4"
               autoPlay
               muted
               loop
@@ -92,7 +92,7 @@ export default function Home() {
           {/* Groom Card */}
           <Link href="/groom" className="group relative h-[50vh] md:h-[80vh] w-full block overflow-hidden bg-stone-900">
             <video
-              src="/groom.mp4"
+              src="/nehal/groom.mp4"
               autoPlay
               muted
               loop
