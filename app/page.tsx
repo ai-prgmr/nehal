@@ -54,16 +54,32 @@ export default function Home() {
             </div>
           </div>
 
-          <h2 className="font-serif italic text-5xl md:text-6xl mb-10 text-stone-800">
-            Nehal Desai
+          <h2 className="font-serif text-5xl md:text-6xl mb-4 text-stone-800">
+            Meet Nehal
           </h2>
+          <h3 className="uppercase tracking-widest text-sm md:text-base text-stone-500 font-medium mb-10">
+            Bridal & Occasion Stylist | Image Coach
+          </h3>
 
           <div className="space-y-8 text-lg md:text-xl text-stone-600 font-light leading-relaxed tracking-wide">
+            <p className="text-xl md:text-2xl text-stone-700">
+              This is where the woman behind the styling becomes important.
+            </p>
             <p>
               My philosophy is deeply rooted in the belief that luxury is an experience—an intimately crafted journey that materializes long before the day arrives. I draw inspiration from the intricate heritage of Indian textiles and the effortless silhouettes of modern couture.
             </p>
             <p>
               Every garment is an architectural marvel—meticulously designed to resonate with you, ensuring that an individual&apos;s essence naturally emanates through hand-woven artistry and delicate embellishments.
+            </p>
+          </div>
+
+          <div className="mt-24 max-w-3xl mx-auto">
+            <p className="font-serif italic text-3xl md:text-4xl text-stone-700 leading-relaxed">
+              &ldquo;Styling isn&apos;t about changing who you are. <br className="hidden md:block" />
+              It&apos;s about helping you see yourself with confidence.&rdquo;
+            </p>
+            <p className="uppercase tracking-widest text-sm text-stone-400 font-medium mt-8">
+              — Nehal
             </p>
           </div>
         </section>

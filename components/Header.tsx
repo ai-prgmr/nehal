@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="font-serif italic text-3xl md:text-4xl text-stone-50 hover:text-stone-300 transition-colors relative z-50">
-          Nehal
+          <Image src="/nehal/Nehal-logo.png" alt="Nehal Jhavveri logo" width={150} height={150} />
         </Link>
 
         {/* Desktop Nav */}
