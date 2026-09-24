@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header
-      className={` w-full z-50 transition-all duration-500 px-6 lg:px-12 ${isScrolled ? "bg-stone-950/90 backdrop-blur-md py-4 shadow-md" : "bg-black/10 py-6"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 lg:px-12 ${isScrolled ? "bg-stone-950/90 backdrop-blur-md py-4 shadow-md" : "bg-black/10 py-6"
         }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function Header() {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden text-stone-50 focus:outline-none relative z-50"
+          className={`md:hidden focus:outline-none relative z-50 ${mobileMenuOpen ? 'text-stone-900' : 'text-stone-850'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function Header() {
 
       {/* Mobile Nav Menu */}
       <div
-        className={`absolute top-0 left-0 w-full bg-stone-950/95 backdrop-blur-lg transition-all duration-500 ease-in-out overflow-hidden md:hidden flex flex-col items-center pt-24 ${mobileMenuOpen ? "h-screen" : "h-0"
+        className={`absolute top-0 left-0 w-full bg-stone-50/95 backdrop-blur-lg transition-all duration-500 ease-in-out overflow-hidden md:hidden flex flex-col items-center pt-24 ${mobileMenuOpen ? "h-screen" : "h-0"
           }`}
       >
         <div className="flex flex-col gap-6 w-full px-6 text-center">
@@ -84,7 +84,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="py-4 text-stone-300 hover:text-white uppercase tracking-widest text-lg w-full border-b border-stone-800"
+              className="py-4 text-stone-700 hover:text-black uppercase tracking-widest text-lg w-full border-b border-stone-200"
             >
               {link.name}
             </Link>
@@ -92,7 +92,7 @@ export default function Header() {
           <Link
             href="/book-appointment"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-8 px-8 py-4 bg-stone-100 text-stone-900 hover:bg-white transition-all duration-300 uppercase text-sm tracking-widest font-medium w-full"
+            className="mt-8 px-8 py-4 bg-stone-900 text-stone-50 hover:bg-black transition-all duration-300 uppercase text-sm tracking-widest font-medium w-full"
           >
             Book Appointment
           </Link>
