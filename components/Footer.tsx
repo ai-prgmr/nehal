@@ -1,12 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-950 text-stone-400 py-24 px-6 lg:px-12 border-t border-stone-900">
+    <footer className="text-stone-400 py-24 px-6 lg:px-12 border-t border-stone-900">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8">
         {/* Brand */}
         <div className="col-span-1 md:pr-8">
-          <h3 className="font-serif italic text-4xl text-stone-100 mb-6">Nehal</h3>
+          <h3 className="font-serif italic text-4xl text-stone-100 mb-6">
+            <Image src="/nehal/Nehal-logo.png" alt="Nehal Jhavveri" width={300} height={300} />
+          </h3>
           <p className="text-sm font-light text-stone-500 leading-relaxed">
             Elevating the essence of Indian bridal elegance with thoughtfully crafted couture that transcends time.
           </p>
