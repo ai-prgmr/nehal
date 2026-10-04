@@ -21,68 +21,121 @@ export default async function CategoryPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] text-stone-900 selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
-      {/* 2. Hero Section (Immersive & Editorial) */}
-      <section className="relative h-[80vh] w-full overflow-hidden bg-stone-900">
-        <Image
-          src={categoryData.heroVideoOrImage}
-          alt={categoryData.title}
-          fill
-          priority
-          className="object-contain opacity-80"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
+    <div className="min-h-screen bg-[#F8F5EE] text-[#3F3A32] selection:bg-[#E8D7B5] selection:text-[#3F3A32]">
+      {/* 1. Hero Section (2-Column Layout, 9:16 Media First on Mobile) */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF8] via-[#F8F5EE] to-[#F5F1E8] py-12 lg:py-20 border-b border-[#E7DFD1]">
+        {/* Subtle Ambient Silk Radial Glow */}
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#F1E5CC]/35 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="absolute bottom-0 left-0 w-full z-20 px-6 lg:px-12 pb-24 text-stone-50">
-          <div className="max-w-4xl mx-auto flex flex-col gap-6">
-            <FadeIn delay={100}>
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-[6rem] tracking-wider leading-none">
-                {categoryData.title}
-              </h1>
-            </FadeIn>
-            <FadeIn delay={400}>
-              <p className="font-sans text-lg md:text-xl max-w-2xl font-light leading-relaxed tracking-wide text-stone-200">
-                {categoryData.manifesto}
-              </p>
-            </FadeIn>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Media Column (9:16 Portrait Media, First on Mobile) */}
+            <div className="order-1 lg:order-2 lg:col-span-6 flex justify-center w-full">
+              <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px] aspect-[9/16] image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-[#E7DFD1] bg-[#F5F1E8] group">
+                {categoryData.heroVideo ? (
+                  <video
+                    src={categoryData.heroVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
+                  />
+                ) : (
+                  <Image
+                    src={categoryData.heroVideoOrImage}
+                    alt={categoryData.title}
+                    fill
+                    priority
+                    className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 340px, 400px"
+                  />
+                )}
+                {/* Subtle Light Editorial Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#3F3A32]/25 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 text-white text-center">
+                  <span className="text-[11px] uppercase tracking-[0.2em] font-light text-[#F1E5CC] drop-shadow-sm">
+                    {categoryData.tagline || "Haute Couture Edition"}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Column (Second on Mobile, Left on Desktop) */}
+            <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:space-y-8">
+              <FadeIn delay={100} className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFAF5] border border-[#E7DFD1] text-[#9B8150] text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
+                  <span>Celebration Atelier</span>
+                </div>
+
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[#3F3A32] leading-[1.02] font-normal tracking-tight">
+                  {categoryData.title}
+                </h1>
+              </FadeIn>
+
+              <div className="gold-rule mx-auto lg:mx-0" />
+
+              <FadeIn delay={300}>
+                <p className="font-sans text-base lg:text-lg text-[#71695D] font-light leading-relaxed max-w-xl">
+                  {categoryData.manifesto}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={500} className="pt-2 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Link href="/contact" className="button-primary w-full sm:w-auto text-center">
+                  Schedule Private Fitting
+                </Link>
+                <a href="#collection" className="button-secondary w-full sm:w-auto text-center">
+                  View Collection
+                </a>
+              </FadeIn>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 3. The Collection (Products Grid) */}
-      <section className="w-full py-32 px-6 lg:px-12">
+      {/* 2. The Collection (Products Grid) */}
+      <section id="collection" className="w-full py-24 lg:py-32 px-6 lg:px-12 bg-[#FCFAF5] border-b border-[#E7DFD1]">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-stone-800 tracking-wide mb-20 md:mb-32 text-center uppercase">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#9B8150] font-medium">
+              Signature Creations
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl text-[#3F3A32]">
               The Collection
             </h2>
+            <div className="gold-rule mx-auto" />
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
             {categoryData.products.map((product, idx) => (
               <FadeIn
                 key={idx}
                 delay={idx % 2 === 0 ? 0 : 200}
-                className={`group flex flex-col gap-8 ${idx % 2 !== 0 ? "md:mt-32" : ""
-                  }`}
+                className="card-editorial group flex flex-col"
               >
-                <div className="relative w-full aspect-3/4 overflow-hidden bg-stone-200 shadow-xl">
-                  {/* Using unoptimized for placeholder simplicity, usually next/image optimization is fine */}
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#F5F1E8]">
                   <Image
                     src={product.imagePlaceholder}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                    className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/10 transition-colors duration-700 pointer-events-none" />
+                  <div className="absolute inset-0 bg-[#3F3A32]/0 group-hover:bg-[#3F3A32]/8 transition-colors duration-500 pointer-events-none" />
                 </div>
-                <div className="space-y-4 px-2 md:px-6">
-                  <h3 className="font-serif text-3xl text-stone-800 tracking-wide">
+                <div className="p-8 space-y-3 bg-[#FFFDF8]">
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-[#9B8150] font-medium block">
+                    Bespoke Piece
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#3F3A32]">
                     {product.name}
                   </h3>
-                  <div className="w-12 h-px bg-stone-400" />
-                  <p className="font-sans text-stone-600 font-light leading-relaxed text-lg pt-2 tracking-wide">
+                  <div className="w-10 h-px bg-[#E7DFD1]" />
+                  <p className="font-sans text-[#71695D] font-light leading-relaxed text-sm">
                     {product.description}
                   </p>
                 </div>
@@ -92,22 +145,30 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 4. The Experience (Services Section) */}
-      <section className="w-full py-32 bg-[#faf9f6] px-6 lg:px-12 border-t border-stone-200">
+      {/* The Bespoke Experience (Services Section) */}
+      <section className="w-full py-24 lg:py-32 bg-[#F8F5EE] px-6 lg:px-12 border-b border-[#E7DFD1]">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-stone-800 tracking-wide mb-20 uppercase">
-              The Experience
+          <FadeIn className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#9B8150] font-medium">
+              Tailored For You
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl text-[#3F3A32]">
+              The Bespoke Experience
             </h2>
+            <div className="gold-rule mx-auto" />
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
             {categoryData.services.map((service, idx) => (
-              <FadeIn key={idx} delay={idx * 150} className="flex flex-col gap-6 border-t border-stone-300 pt-8">
-                <h3 className="font-sans text-2xl lg:text-3xl font-thin tracking-widest text-stone-800 uppercase">
+              <FadeIn key={idx} delay={idx * 150} className="card-editorial p-8 space-y-4 bg-[#FFFDF8]">
+                <span className="text-xs uppercase tracking-[0.18em] text-[#9B8150] font-medium block">
+                  Bespoke Service
+                </span>
+                <h3 className="font-serif text-2xl text-[#3F3A32]">
                   {service.title}
                 </h3>
-                <p className="font-sans text-stone-600 font-light leading-relaxed text-lg pr-4 tracking-wide text-pretty">
+                <div className="w-8 h-px bg-[#E7DFD1]" />
+                <p className="font-sans text-[#71695D] font-light leading-relaxed text-sm">
                   {service.description}
                 </p>
               </FadeIn>
@@ -116,21 +177,31 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 5. Call to Action (The Booking Prompt) */}
-      <section className="w-full bg-stone-900 text-stone-50 py-32 px-6 lg:px-12 text-center border-t border-stone-800">
-        <FadeIn className="max-w-3xl mx-auto space-y-12">
-          <h2 className="font-serif italic text-5xl md:text-6xl text-stone-100 mb-8">
-            Begin Your Design Journey.
+      {/* 4. Call to Action (Private Consultation) */}
+      <section className="w-full bg-gradient-to-br from-[#FFFDF8] via-[#F8F2E7] to-[#F1E5CC] py-24 lg:py-32 px-6 lg:px-12 text-center">
+        <FadeIn className="max-w-3xl mx-auto space-y-8">
+          <span className="text-xs uppercase tracking-[0.2em] text-[#9B8150] font-medium">
+            Private Atelier Appointments
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#3F3A32] leading-tight">
+            Begin Your Couture Journey.
           </h2>
-          <div className="flex justify-center">
+          <div className="gold-rule mx-auto" />
+          <p className="text-base sm:text-lg text-[#71695D] font-light leading-relaxed max-w-2xl mx-auto">
+            From preliminary textile sourcing to the final champagne fitting, experience bespoke luxury tailored exclusively around your vision.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
             <Link
-              href="/book-appointment"
-              className="group relative inline-block px-12 py-6 bg-stone-100 text-stone-900 font-sans font-medium tracking-[0.2em] uppercase text-sm hover:bg-white transition-all duration-500 overflow-hidden"
+              href="/contact"
+              className="button-primary"
             >
-              <span className="relative z-10 text-stone-100 mix-blend-difference group-hover:text-stone-900 transition-colors duration-500">
-                Book an Appointment
-              </span>
-              <div className="absolute top-0 left-0 w-full h-full bg-stone-300/80 transform scale-y-0 origin-bottom transition-transform duration-500 ease-out group-hover:scale-y-100 z-0" />
+              Book Private Consultation
+            </Link>
+            <Link
+              href="/image-stylist"
+              className="button-secondary"
+            >
+              Explore Image Styling
             </Link>
           </div>
         </FadeIn>

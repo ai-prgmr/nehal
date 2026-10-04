@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Calendar, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -10,209 +10,187 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate a brief API delay for the luxury experience
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 2000);
+    }, 1500);
   };
 
-  const inputClasses = 
-    "w-full border border-neutral-200 rounded-xl px-4 py-3.5 bg-neutral-50 hover:bg-neutral-100 focus:bg-white focus:outline-none focus:ring-1 focus:ring-neutral-800 focus:border-neutral-800 transition-all duration-300 text-neutral-900 placeholder:text-neutral-400";
-  const labelClasses = "block text-sm font-medium text-neutral-700 tracking-wide";
+  const inputClasses =
+    "w-full border border-[#E7DFD1] rounded-sm px-4 py-3.5 bg-[#FFFDF8] hover:bg-white focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#9B8150] focus:border-[#9B8150] transition-all duration-300 text-[#3F3A32] placeholder:text-[#968D80] text-sm";
+  const labelClasses = "block text-xs font-medium uppercase tracking-[0.14em] text-[#71695D] mb-1.5";
 
   return (
-    <main className="min-h-screen bg-neutral-50 font-sans selection:bg-neutral-900 selection:text-white">
-      {/* Page Header (The Invitation) */}
-      <section className="relative min-h-[40vh] bg-neutral-900 flex items-center justify-center overflow-hidden px-6 py-24 object-cover">
-        {/* Subtle patterned overlay to add a premium touch */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 pointer-events-none" />
+    <main className="min-h-screen bg-[#F8F5EE] text-[#3F3A32] font-sans selection:bg-[#E8D7B5] selection:text-[#3F3A32]">
+      {/* 1. Page Header (Editorial Invitation) */}
+      <section className="relative bg-gradient-to-b from-[#FFFDF8] via-[#F8F5EE] to-[#F5F1E8] py-16 lg:py-24 px-6 lg:px-12 border-b border-[#E7DFD1] text-center">
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#F1E5CC]/30 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl text-white font-serif tracking-tight font-light drop-shadow-sm">
+        <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFAF5] border border-[#E7DFD1] text-[#9B8150] text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
+            <span>Private Consultations & Appointments</span>
+          </div>
+
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#3F3A32] leading-tight font-normal">
             Begin Your Bespoke Journey.
           </h1>
-          <p className="text-neutral-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
-            Whether you are a bride, a groom, or curating looks for the entire family, we are honored to bring your vision to life. Reach out or book a private fitting below.
+
+          <div className="gold-rule mx-auto" />
+
+          <p className="text-[#71695D] text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+            Whether you are curating looks for your bridal ceremonies, orchestrating the family trousseau, or embarking on a personal image coaching journey, we look forward to connecting with you.
           </p>
         </div>
       </section>
 
-      {/* Main Content Layout */}
-      <section className="max-w-7xl mx-auto px-6 py-20 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      {/* 2. Main Content Layout */}
+      <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
-          {/* Left Column: Direct Contact & VIP Booking */}
-          <div className="flex flex-col space-y-16 lg:pr-8">
+          {/* Left Column: Direct Contact & VIP Studio Info */}
+          <div className="lg:col-span-5 flex flex-col space-y-10">
             
-            {/* Direct Details */}
-            <div className="space-y-12">
-              <div className="space-y-10">
-                
-                <div className="group flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-neutral-100 rounded-full flex items-center justify-center shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-300">
-                    <Phone className="w-5 h-5 text-neutral-500 group-hover:text-white transition-colors duration-300 stroke-[1.5]" />
-                  </div>
-                  <div className="pt-1">
-                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-[0.2em] mb-1.5">Phone</p>
-                    <p className="text-xl text-neutral-900 font-light">+91 98765 43210</p>
-                  </div>
+            <div className="space-y-6">
+              <div className="group flex items-start space-x-5">
+                <div className="w-12 h-12 bg-[#FFFDF8] shadow-xs border border-[#E7DFD1] rounded-full flex items-center justify-center shrink-0 group-hover:border-[#9B8150] transition-colors duration-300">
+                  <Mail className="w-5 h-5 text-[#9B8150] stroke-[1.5]" />
                 </div>
-                
-                <div className="group flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-neutral-100 rounded-full flex items-center justify-center shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-300">
-                    <Mail className="w-5 h-5 text-neutral-500 group-hover:text-white transition-colors duration-300 stroke-[1.5]" />
-                  </div>
-                  <div className="pt-1">
-                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-[0.2em] mb-1.5">Email</p>
-                    <p className="text-xl text-neutral-900 font-light">concierge@designername.com</p>
-                  </div>
+                <div className="pt-0.5">
+                  <p className="text-xs font-semibold text-[#968D80] uppercase tracking-[0.18em] mb-1">Email Concierge</p>
+                  <p className="text-lg text-[#3F3A32] font-normal">style@nehaljhavveri.com</p>
                 </div>
+              </div>
 
-                <div className="group flex items-start space-x-6">
-                  <div className="w-12 h-12 bg-white shadow-sm border border-neutral-100 rounded-full flex items-center justify-center shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors duration-300">
-                    <MapPin className="w-5 h-5 text-neutral-500 group-hover:text-white transition-colors duration-300 stroke-[1.5]" />
-                  </div>
-                  <div className="pt-1">
-                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-[0.2em] mb-1.5">Location</p>
-                    <p className="text-xl text-neutral-900 font-light leading-relaxed">
-                      Flagship Studio<br />
-                      Indore, Madhya Pradesh
-                    </p>
-                  </div>
+              <div className="group flex items-start space-x-5">
+                <div className="w-12 h-12 bg-[#FFFDF8] shadow-xs border border-[#E7DFD1] rounded-full flex items-center justify-center shrink-0 group-hover:border-[#9B8150] transition-colors duration-300">
+                  <MapPin className="w-5 h-5 text-[#9B8150] stroke-[1.5]" />
                 </div>
-
+                <div className="pt-0.5">
+                  <p className="text-xs font-semibold text-[#968D80] uppercase tracking-[0.18em] mb-1">Private Atelier</p>
+                  <p className="text-lg text-[#3F3A32] font-normal leading-relaxed">
+                    By Private Appointment Only<br />
+                    Indore, Madhya Pradesh, India
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* The VIP Booking CTA */}
-            <div className="bg-white p-10 md:p-14 rounded-[2rem] space-y-8 shadow-xl shadow-neutral-200/40 border border-neutral-100/50 flex flex-col items-start relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-                <Calendar className="w-32 h-32" />
-              </div>
-              <div className="space-y-4 relative z-10 w-full">
-                <h3 className="text-3xl font-serif text-neutral-900 leading-tight">Schedule a Private Fitting</h3>
-                <p className="text-neutral-500 leading-relaxed text-lg max-w-sm">
-                  Reserve an uninterrupted session at our studio to discuss fabrics, silhouettes, and your wedding vision.
-                </p>
-              </div>
-              
-              <button className="w-full inline-flex items-center justify-center space-x-3 bg-neutral-900 text-white px-8 py-5 rounded-xl hover:bg-neutral-800 transition-all duration-300 text-lg font-medium tracking-wide group relative z-10 shadow-lg shadow-neutral-900/20">
-                <Calendar className="w-5 h-5 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 opacity-90" />
-                <span>Book Consultation Time</span>
-              </button>
+            {/* VIP Booking Note */}
+            <div className="card-editorial p-8 space-y-4 bg-[#FFFDF8] relative overflow-hidden">
+              <span className="text-xs uppercase tracking-[0.18em] text-[#9B8150] font-medium block">
+                Appointment Protocol
+              </span>
+              <h3 className="text-2xl font-serif text-[#3F3A32]">
+                Fitting & Coaching Sessions
+              </h3>
+              <p className="text-[#71695D] leading-relaxed text-sm font-light">
+                To provide undivided attention, we accept a limited number of bridal and image coaching clients each season. Consultations are conducted in our private studio in Indore, India, as well as virtually for clients worldwide.
+              </p>
             </div>
           </div>
 
           {/* Right Column: The Inquiry Form */}
-          <div className="relative">
-            <div className="bg-white shadow-2xl shadow-neutral-200/50 p-8 sm:p-12 rounded-[2.5rem] border border-neutral-100 h-full">
+          <div className="lg:col-span-7">
+            <div className="card-editorial p-8 sm:p-12 bg-[#FFFDF8] shadow-[0_15px_45px_rgba(63,58,50,0.08)]">
               {isSuccess ? (
-                <div className="h-full min-h-[500px] flex flex-col items-center justify-center text-center space-y-6 animate-in fade-in zoom-in duration-700">
-                  <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mb-4">
-                    <CheckCircle2 className="w-12 h-12 text-green-600" />
+                <div className="h-full min-h-[450px] flex flex-col items-center justify-center text-center space-y-6 animate-in fade-in zoom-in duration-700">
+                  <div className="w-20 h-20 bg-[#F1E5CC]/50 rounded-full flex items-center justify-center mb-2 border border-[#D6BE8F]">
+                    <CheckCircle2 className="w-10 h-10 text-[#9B8150]" />
                   </div>
-                  <h3 className="text-3xl font-serif text-neutral-900">Thank You</h3>
-                  <p className="text-neutral-500 text-lg max-w-sm leading-relaxed">
-                    Our styling concierge will be in touch shortly to orchestrate your bespoke experience.
+                  <h3 className="text-3xl font-serif text-[#3F3A32]">Thank You</h3>
+                  <p className="text-[#71695D] text-base max-w-md leading-relaxed font-light">
+                    Your inquiry has been received. Our styling concierge will connect with you via email within 24 hours.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8 animate-in fade-in duration-500">
-                  <div className="space-y-3 pb-4 border-b border-neutral-100">
-                    <h2 className="text-3xl md:text-4xl font-serif text-neutral-900">Send an Inquiry</h2>
-                    <p className="text-neutral-500 text-base">We will reach out to you within 24 hours.</p>
+                <form onSubmit={handleSubmit} className="space-y-6 animate-in fade-in duration-500">
+                  <div className="space-y-2 pb-4 border-b border-[#EEE8DE]">
+                    <h2 className="text-2xl sm:text-3xl font-serif text-[#3F3A32]">Schedule a Consultation</h2>
+                    <p className="text-[#71695D] text-xs font-light">Please share your details below for our atelier team.</p>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-5">
                     {/* Full Name */}
-                    <div className="space-y-2 text-left">
+                    <div>
                       <label htmlFor="name" className={labelClasses}>Full Name</label>
-                      <input 
-                        required 
-                        type="text" 
-                        id="name" 
+                      <input
+                        required
+                        type="text"
+                        id="name"
                         className={inputClasses}
                         placeholder="e.g. Ananya Sharma"
                       />
                     </div>
 
-                    {/* Email and Phone Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2 text-left">
-                        <label htmlFor="email" className={labelClasses}>Email Address</label>
-                        <input 
-                          required 
-                          type="email" 
-                          id="email" 
-                          className={inputClasses}
-                          placeholder="ananya@example.com"
-                        />
-                      </div>
-                      <div className="space-y-2 text-left">
-                        <label htmlFor="phone" className={labelClasses}>Phone Number</label>
-                        <input 
-                          required 
-                          type="tel" 
-                          id="phone" 
-                          className={inputClasses}
-                          placeholder="+91 98765 43210"
-                        />
-                      </div>
+                    {/* Email Address */}
+                    <div>
+                      <label htmlFor="email" className={labelClasses}>Email Address</label>
+                      <input
+                        required
+                        type="email"
+                        id="email"
+                        className={inputClasses}
+                        placeholder="ananya@example.com"
+                      />
                     </div>
 
-                    {/* Event Date and Type */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2 text-left">
-                        <label htmlFor="date" className={labelClasses}>Wedding / Event Date</label>
-                        <input 
-                          type="date" 
-                          id="date" 
-                          className={`${inputClasses} appearance-none min-h-[52px]`}
+                    {/* Event Date and Program Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="date" className={labelClasses}>Target Date (Optional)</label>
+                        <input
+                          type="date"
+                          id="date"
+                          className={`${inputClasses} appearance-none min-h-[46px]`}
                         />
                       </div>
-                      <div className="space-y-2 text-left relative">
-                        <label htmlFor="type" className={labelClasses}>Inquiry Type</label>
-                        <select 
-                          id="type" 
+                      <div className="relative">
+                        <label htmlFor="type" className={labelClasses}>Styling Program</label>
+                        <select
+                          id="type"
                           className={`${inputClasses} appearance-none pr-10`}
                         >
-                          <option value="bride">The Bride</option>
-                          <option value="groom">The Groom</option>
-                          <option value="party">Bridal Party</option>
+                          <option value="bride">The Bride (Couture & Trousseau)</option>
+                          <option value="groom">The Groom (Sherwani & Tailoring)</option>
                           <option value="family">Family Package</option>
-                          <option value="other">Other</option>
+                          <option value="transformation">Style Transformation</option>
+                          <option value="wardrobe">Wardrobe Redesign</option>
+                          <option value="coaching">Luxury Style Coaching</option>
+                          <option value="shopping">Shopping Consulting</option>
+                          <option value="festivals">Festivals & Destination Occasions</option>
                         </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 pt-6 text-neutral-500">
-                          <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 pt-6 text-[#968D80]">
+                          <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                          </svg>
                         </div>
                       </div>
                     </div>
 
-                    {/* Vision */}
-                    <div className="space-y-2 text-left">
-                      <label htmlFor="vision" className={labelClasses}>Your Vision</label>
-                      <textarea 
-                        id="vision" 
+                    {/* Vision / Notes */}
+                    <div>
+                      <label htmlFor="vision" className={labelClasses}>Your Vision or Requirements</label>
+                      <textarea
+                        id="vision"
                         rows={4}
                         className={`${inputClasses} resize-none`}
-                        placeholder="Tell us about your dream outfit, your venue, or any specific inspirations..."
+                        placeholder="Tell us about your wedding events, wardrobe goals, or specific styling requirements..."
                       />
                     </div>
                   </div>
 
-                  <button 
+                  <button
                     disabled={isSubmitting}
-                    className="w-full bg-neutral-900 text-white py-4.5 rounded-xl hover:bg-neutral-800 transition-all duration-300 text-base font-medium tracking-wide flex items-center justify-center space-x-3 disabled:opacity-70 disabled:cursor-not-allowed mt-4 shadow-lg shadow-neutral-900/20"
+                    type="submit"
+                    className="button-primary w-full !py-4 text-xs tracking-[0.2em] font-medium flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-5 h-5 animate-spin opacity-90" />
-                        <span>Sending...</span>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Submitting Details...</span>
                       </>
                     ) : (
-                      <span>Send Inquiry</span>
+                      <span>Request Private Consultation</span>
                     )}
                   </button>
                 </form>
