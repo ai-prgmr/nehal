@@ -163,30 +163,5 @@ export const categories: CategoryData[] = [
         description: "Styling sessions for the entire bridal party to ensure a cohesive look."
       }
     ]
-  },
-  {
-    slug: "parents",
-    title: "The Parents",
-    heroVideoOrImage: "/nehal/images/parents-hero.jpg",
-    tagline: "GRACE, HONOUR & HERITAGE",
-    manifesto: "Grace and dignity for the anchors of the family. Heritage pieces that reflect pride, joy, and timeless elegance.",
-    products: [
-      {
-        name: "Heirloom Saree Collection",
-        description: "Magnificent, traditional Kanjeevaram silk sarees with thick gold border work.",
-        imagePlaceholder: "/nehal/images/parents-saree.jpg"
-      },
-      {
-        name: "Structured Bandhgalas",
-        description: "Classic, elegant structured Bandhgala suits for fathers.",
-        imagePlaceholder: "/nehal/images/parents-bandhgala.jpg"
-      }
-    ],
-    services: [
-      {
-        title: "Heritage Revivals",
-        description: "Restoring or repurposing vintage family pieces for the ceremony."
-      }
-    ]
   }
 ];

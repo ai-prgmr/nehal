@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingBookingButton from "@/components/FloatingBookingButton";
 
 export const metadata: Metadata = {
-  title: "Nehal Jhavveri | Luxury Bridal & Image Stylist",
-  description: "Bespoke bridal styling, occasion couture, and executive image coaching by Nehal Jhavveri.",
+  title: "Nehal Jhavveri | Personal Image Stylist & Confidence Coach",
+  description: "Head-to-toe image transformation, public confidence coaching, and 3-month wedding styling by Nehal Jhavveri.",
 };
 
 export default function RootLayout({
@@ -23,12 +24,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#F8F5EE] text-[#3F3A32] font-sans antialiased selection:bg-[#E8D7B5] selection:text-[#3F3A32] min-h-screen flex flex-col">
+      <body className="bg-ivory text-text-primary font-sans antialiased selection:bg-champagne selection:text-text-primary min-h-screen flex flex-col">
         <Header />
         <div className="flex-1">
           {children}
         </div>
         <Footer />
+        <FloatingBookingButton />
       </body>
     </html>
   );
