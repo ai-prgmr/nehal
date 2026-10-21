@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Media Column (9:16 Portrait Media, First on Mobile) */}
             <div className="order-1 lg:order-2 lg:col-span-6 flex justify-center w-full">
               <div className="relative w-full max-w-[320px] sm:max-w-90 md:max-w-100 aspect-9/16 image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-border-main bg-warm-white group">
@@ -85,10 +85,10 @@ export default async function CategoryPage({ params }: PageProps) {
 
               <FadeIn delay={500} className="pt-2 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link href="/contact" className="button-primary w-full sm:w-auto text-center">
-                  Schedule Private Fitting
+                  Book a Consultation
                 </Link>
                 <a href="#collection" className="button-secondary w-full sm:w-auto text-center">
-                  View Collection
+                  View Portfolio
                 </a>
               </FadeIn>
             </div>
@@ -176,6 +176,59 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Maternity & Godbharai Styling Section (Section of Occasion Styling) */}
+      {categoryData.slug === "festivals" && (
+        <section id="maternity" className="w-full py-24 lg:py-32 bg-pearl px-6 lg:px-12 border-b border-border-main scroll-mt-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="card-editorial p-8 sm:p-12 lg:p-16 bg-silk border border-border-main">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                <div className="lg:col-span-7 space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-warm-white border border-border-main text-text-gold text-xs uppercase tracking-[0.18em] font-medium">
+                    <span>Occasion Special Edit</span>
+                  </div>
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-text-primary leading-tight">
+                    Maternity Styling & Godbharai Styling
+                  </h2>
+                  <div className="gold-rule" />
+                  <p className="font-sans text-base text-text-secondary font-light leading-relaxed">
+                    Celebrating the sacred milestone of motherhood calls for couture that harmonizes traditional sanctity with supreme comfort. Nehal curates bespoke Godbharai (baby shower) ceremony ensembles, pre-draped heirloom silk sarees, and high-fashion maternity photoshoot silhouettes tailored for glowing radiance.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div className="p-4 rounded-xl bg-warm-white border border-border-soft space-y-1.5">
+                      <h4 className="text-xs uppercase tracking-[0.14em] text-text-gold font-semibold">Godbharai Ceremony</h4>
+                      <p className="text-xs text-text-secondary font-light">Lightweight pure Kanjeevarams, floral jewelry coordination, and pressure-free waist pleating.</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-warm-white border border-border-soft space-y-1.5">
+                      <h4 className="text-xs uppercase tracking-[0.14em] text-text-gold font-semibold">Maternity Photoshoot</h4>
+                      <p className="text-xs text-text-secondary font-light">Flowing pastel cape gowns, breathable Chanderi anarkalis, and trimester-adaptive silhouettes.</p>
+                    </div>
+                  </div>
+                  <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                    <Link href="/maternity" className="button-primary text-xs py-2.5! px-6!">
+                      View Dedicated Maternity Collection
+                    </Link>
+                    <Link href="/contact" className="button-secondary text-xs py-2.5! px-6!">
+                      Book Maternity Consultation
+                    </Link>
+                  </div>
+                </div>
+                <div className="lg:col-span-5 flex justify-center">
+                  <div className="relative aspect-3/4 w-full max-w-sm image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-border-main bg-warm-white">
+                    <Image
+                      src="/nehal/images/maternity-hero.jpg"
+                      alt="Nehal Jhavveri - Maternity & Godbharai Styling"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 380px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4. Call to Action (Private Consultation) */}
       <section className="w-full bg-linear-to-br from-silk via-[#F8F2E7] to-champagne-light py-24 lg:py-32 px-6 lg:px-12 text-center">

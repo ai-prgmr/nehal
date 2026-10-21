@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import FloatingBookingButton from "@/components/FloatingBookingButton";
 
 export const metadata: Metadata = {
-  title: "Nehal Jhavveri | Personal Image Stylist & Confidence Coach",
-  description: "Head-to-toe image transformation, public confidence coaching, and 3-month wedding styling by Nehal Jhavveri.",
+  title: "Nehal Jhavveri | Personal Image Stylist & Bridal Stylist",
+  description: "Head-to-toe image styling, public presence refinement, and 3-month wedding styling by Nehal Jhavveri.",
 };
 
 export default function RootLayout({

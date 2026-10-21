@@ -3,7 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "About Nehal Jhavveri | Bridal Stylist & Image Coach",
+  title: "About Nehal Jhavveri | Bridal Stylist & Image Stylist",
   description: "Meet Nehal Jhavveri, bridging traditional Indian craftsmanship and contemporary couture styling.",
 };
 
@@ -35,14 +35,14 @@ export default function AboutPage() {
             <div className="order-2 lg:order-1 lg:col-span-7 space-y-6 text-center lg:text-left">
               <FadeIn delay={100} className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pearl border border-border-main text-text-gold text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
-                  <span>Personal Image Stylist & Confidence Coach</span>
+                  <span>Personal Image Stylist</span>
                 </div>
 
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-text-primary leading-tight">
                   About Nehal Jhavveri
                 </h1>
                 <h2 className="uppercase tracking-[0.16em] text-xs text-text-secondary font-medium">
-                  Personal Image Stylist | Confidence & Wedding Coach
+                  Personal Image Stylist | Bridal & Occasion Stylist
                 </h2>
               </FadeIn>
 

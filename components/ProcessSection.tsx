@@ -129,7 +129,7 @@ export default function ProcessSection() {
                   </li>
                   <li className="flex items-center gap-2 text-xs text-text-secondary font-light">
                     <CheckCircle className="w-3.5 h-3.5 text-text-gold shrink-0" />
-                    <span>Corporate authority & magnetic posture coaching</span>
+                    <span>Corporate authority & magnetic posture refinement</span>
                   </li>
                 </ul>
               </div>

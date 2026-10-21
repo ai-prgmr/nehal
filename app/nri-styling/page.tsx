@@ -4,8 +4,8 @@ import FadeIn from "@/components/FadeIn";
 import { Globe, Calendar, Users, Heart, Compass, Clock, CheckCircle } from "lucide-react";
 
 export const metadata = {
-  title: "NRI Wedding & International Guest Styling Concierge | Nehal Jhavveri",
-  description: "Bespoke Indian wedding styling for NRIs, international couples, and non-Indian guests. Remote time-zone consultations, express fitting suites, and end-to-end entourage curation.",
+  title: "NRI Bridal & Occasion Stylist | Nehal Jhavveri",
+  description: "Bespoke Indian wedding and occasion styling for NRIs, international couples, and non-Indian guests. Remote time-zone consultations, express fitting suites, and end-to-end entourage curation.",
 };
 
 export default function NRIStylingPage() {
@@ -76,7 +76,7 @@ export default function NRIStylingPage() {
               <div className="relative w-full max-w-[320px] sm:max-w-90 md:max-w-100 aspect-9/16 image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-border-main bg-warm-white group">
                 <Image
                   src="/nehal/images/bridesmaids-hero.jpg"
-                  alt="NRI & International Guest Styling by Nehal Jhavveri"
+                  alt="NRI Bridal & Occasion Styling by Nehal Jhavveri"
                   fill
                   priority
                   className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
@@ -96,7 +96,7 @@ export default function NRIStylingPage() {
               <FadeIn delay={100} className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pearl border border-border-main text-text-gold text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
                   <Globe className="w-3.5 h-3.5 text-text-gold" />
-                  <span>Global NRI & International Guest Concierge</span>
+                  <span>Global NRI Bridal & Occasion Stylist</span>
                 </div>
 
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text-primary leading-[1.02] font-normal tracking-tight">
@@ -118,7 +118,7 @@ export default function NRIStylingPage() {
                   Book Virtual NRI Discovery
                 </Link>
                 <a href="#services" className="button-secondary w-full sm:w-auto text-center">
-                  Explore Concierge Services
+                  Explore Occasion Services
                 </a>
               </FadeIn>
 
@@ -168,7 +168,7 @@ export default function NRIStylingPage() {
               Tailored Services
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl text-text-primary">
-              NRI & International Concierge
+              NRI Bridal & Occasion Stylist
             </h2>
             <div className="gold-rule mx-auto" />
           </div>

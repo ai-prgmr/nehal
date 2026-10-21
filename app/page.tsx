@@ -35,7 +35,7 @@ export default function Home() {
                   
                   <div className="absolute bottom-6 left-6 right-6 text-white text-center">
                     <span className="text-[11px] uppercase tracking-[0.2em] font-light text-champagne-light drop-shadow-sm">
-                      Head-to-Toe Style & Image Coaching
+                      Head-to-Toe Image & Personal Styling
                     </span>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ export default function Home() {
               {/* Content Column (Second on Mobile, Left on Desktop) */}
               <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:space-y-8">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pearl border border-border-main text-text-gold text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
-                  <span>Personal Image Stylist & Confidence Coach</span>
+                  <span>Personal Image Stylist & Occasion Stylist</span>
                 </div>
 
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text-primary leading-[1.02] font-normal tracking-tight">
@@ -96,7 +96,7 @@ export default function Home() {
               <div className="relative w-64 h-80 sm:w-72 sm:h-96 image-frame shadow-[0_15px_45px_rgba(63,58,50,0.08)] border border-border-main">
                 <Image
                   src="/nehal/nehal-profile.png"
-                  alt="Nehal Jhavveri - Personal Image Stylist & Confidence Coach"
+                  alt="Nehal Jhavveri - Personal Image Stylist"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 280px, 320px"
@@ -106,13 +106,13 @@ export default function Home() {
 
             <div className="w-full md:w-7/12 text-center md:text-left space-y-6">
               <span className="text-xs uppercase tracking-[0.2em] text-text-gold font-medium">
-                The Coach & Image Architect
+                The Stylist & Image Architect
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl text-text-primary leading-tight">
                 Meet Nehal Jhavveri
               </h2>
               <h3 className="uppercase tracking-[0.14em] text-xs text-text-secondary font-medium">
-                Personal Image Stylist | Confidence & Executive Coach
+                Personal Image Stylist | Executive & Occasion Stylist
               </h3>
               <div className="gold-rule mx-auto md:mx-0" />
 
@@ -173,7 +173,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 space-y-2">
                     <h3 className="font-serif text-2xl text-text-primary group-hover:text-text-gold transition-colors">
-                      Confidence & Style Coaching
+                      Confidence & Style Transformation
                     </h3>
                     <p className="text-xs text-text-secondary font-light leading-relaxed">
                       Color profiling, posture alignment, and establishing an authentic personal language that radiates self-worth.
@@ -263,12 +263,12 @@ export default function Home() {
               </h2>
               <div className="gold-rule mx-auto" />
               <p className="text-xs sm:text-sm text-text-secondary font-light">
-                Commencing 3 months before your event to understand your needs, resolve fit concerns, and synchronize aesthetics.
+                From bridal couture to family coordination, festive occasions, and sacred Godbharai maternity styling—commencing 3 months before your event.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {categories.map((category) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.filter((c) => c.slug !== "maternity-styling").map((category) => (
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}

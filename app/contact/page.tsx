@@ -38,7 +38,7 @@ export default function ContactPage() {
           <div className="gold-rule mx-auto" />
 
           <p className="text-text-secondary text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-            Whether you are curating looks for your bridal ceremonies, orchestrating the family trousseau, or embarking on a personal image coaching journey, we look forward to connecting with you.
+            Whether you are curating looks for your bridal ceremonies, orchestrating the family trousseau, or embarking on a personal image styling journey, we look forward to connecting with you.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-text-gold stroke-[1.5]" />
                 </div>
                 <div className="pt-0.5">
-                  <p className="text-xs font-semibold text-text-muted uppercase tracking-[0.18em] mb-1">Email Concierge</p>
+                  <p className="text-xs font-semibold text-text-muted uppercase tracking-[0.18em] mb-1">Email Styling Team</p>
                   <p className="text-lg text-text-primary font-normal">style@nehaljhavveri.com</p>
                 </div>
               </div>
@@ -81,10 +81,10 @@ export default function ContactPage() {
                 Appointment Protocol
               </span>
               <h3 className="text-2xl font-serif text-text-primary">
-                Fitting & Coaching Sessions
+                Fitting & Styling Sessions
               </h3>
               <p className="text-text-secondary leading-relaxed text-sm font-light">
-                To provide undivided attention, we accept a limited number of bridal and image coaching clients each season. Consultations are conducted in our private studio in Indore, India, as well as virtually for clients worldwide.
+                To provide undivided attention, we accept a limited number of bridal and image styling clients each season. Consultations are conducted in our private studio in Indore, India, as well as virtually for clients worldwide.
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-3xl font-serif text-text-primary">Thank You</h3>
                   <p className="text-text-secondary text-base max-w-md leading-relaxed font-light">
-                    Your inquiry has been received. Our styling concierge will connect with you via email within 24 hours.
+                    Your inquiry has been received. Our styling team will connect with you via email within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -155,9 +155,11 @@ export default function ContactPage() {
                           <option value="family">Family Package</option>
                           <option value="transformation">Style Transformation</option>
                           <option value="wardrobe">Wardrobe Redesign</option>
-                          <option value="coaching">Luxury Style Coaching</option>
+                          <option value="coaching">Executive & Presence Styling</option>
                           <option value="shopping">Shopping Consulting</option>
                           <option value="festivals">Festivals & Destination Occasions</option>
+                          <option value="maternity">Maternity & Godbharai Styling</option>
+                          <option value="nri">NRI Bridal & Occasion Styling</option>
                         </select>
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 pt-6 text-text-muted">
                           <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

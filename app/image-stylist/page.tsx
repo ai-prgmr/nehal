@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import ProcessSection from "@/components/ProcessSection";
 
 export const metadata = {
-  title: "Personal Image Stylist & Confidence Coaching | Nehal Jhavveri",
+  title: "Personal Image Stylist & Executive Presence | Nehal Jhavveri",
   description: "Uplift your public confidence and executive presence with 3, 5, 7, and 9-day head-to-toe image styling programs by Nehal Jhavveri.",
 };
 
@@ -12,7 +12,7 @@ export default function ImageStylistPage() {
   const services = [
     {
       id: "transformation",
-      title: "Public Confidence & Style Coaching",
+      title: "Public Confidence & Style Transformation",
       tagline: "AUTHENTIC SELF-EXPRESSION & PUBLIC PRESENCE",
       description:
         "Image styling is far beyond clothing—it is about how you present yourself and feel in public. We conduct a head-to-toe evaluation (hair/grooming, face framing, skin/color profiling, posture, and silhouette proportioning) to elevate your self-worth and public confidence.",
@@ -21,7 +21,7 @@ export default function ImageStylistPage() {
         "Personalized seasonal color & skin undertone profiling",
         "Body silhouette & architectural proportions guide",
         "Hairstyle, facial framing & grooming harmonization",
-        "Confidence & garbing posture coaching for public ease",
+        "Confidence & garbing posture refinement for public ease",
       ],
       image: "/nehal/images/style-transformation.jpg",
     },
@@ -45,9 +45,9 @@ export default function ImageStylistPage() {
       title: "Executive & Public Presence",
       tagline: "PROFESSIONAL NEED, POSTURE & MEDIA ALIGNMENT",
       description:
-        "Designed for corporate leaders, founders, keynote speakers, and public personalities. We coach you to project authority, commanding poise, and authentic leadership language in corporate and media settings.",
+        "Designed for corporate leaders, founders, keynote speakers, and public personalities. We guide and style you to project authority, commanding poise, and authentic leadership language in corporate and media settings.",
       deliverables: [
-        "One-on-one executive presence & authority coaching",
+        "One-on-one executive presence & authority consulting",
         "Public speaking, keynote & press appearance styling",
         "Body language, posture & garment deportment training",
         "Personal branding & leadership visual identity alignment",
@@ -84,7 +84,7 @@ export default function ImageStylistPage() {
               <div className="relative w-full max-w-[320px] sm:max-w-90 md:max-w-100 aspect-9/16 image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-border-main bg-warm-white">
                 <Image
                   src="/nehal/nehal-profile.png"
-                  alt="Nehal Jhavveri - Personal Image Stylist & Confidence Coach"
+                  alt="Nehal Jhavveri - Personal Image Stylist"
                   fill
                   priority
                   className="object-cover transition-transform duration-1000 hover:scale-[1.02]"
@@ -103,7 +103,7 @@ export default function ImageStylistPage() {
             <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:space-y-8">
               <FadeIn delay={100} className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pearl border border-border-main text-text-gold text-xs uppercase tracking-[0.18em] font-medium shadow-xs">
-                  <span>Personal Image Stylist & Confidence Coach</span>
+                  <span>Personal Image Stylist</span>
                 </div>
 
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text-primary leading-[1.02] font-normal tracking-tight">

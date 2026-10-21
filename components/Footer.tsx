@@ -51,12 +51,17 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/nri-styling" className="hover:text-text-primary transition-colors duration-200 text-text-gold font-medium">
-                NRI & Global Concierge
+                NRI Bridal & Occasion Stylist
               </Link>
             </li>
             <li>
               <Link href="/festivals" className="hover:text-text-primary transition-colors duration-200">
                 Festivals & Occasions
+              </Link>
+            </li>
+            <li>
+              <Link href="/maternity" className="hover:text-text-primary transition-colors duration-200">
+                Maternity & Godbharai
               </Link>
             </li>
           </ul>
@@ -80,7 +85,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/image-stylist#coaching" className="hover:text-text-primary transition-colors duration-200">
-                Luxury Style Coaching
+                Executive & Presence Styling
               </Link>
             </li>
             <li>

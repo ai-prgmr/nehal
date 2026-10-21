@@ -140,6 +140,64 @@ export const categories: CategoryData[] = [
     ]
   },
   {
+    slug: "maternity",
+    title: "Maternity & Godbharai Styling",
+    heroVideoOrImage: "/nehal/images/maternity-hero.jpg",
+    tagline: "SACRED CELEBRATIONS & LUMINOUS MATERNITY COUTURE",
+    manifesto: "Embrace the divine journey into motherhood with effortless poise, breathable silhouettes, and timeless opulence. Nehal curates bespoke Godbharai (baby shower) ceremony ensembles, weight-balanced heirloom silk drapes, and ethereal maternity photoshoot couture designed to celebrate your radiant glow.",
+    products: [
+      {
+        name: "The Sacred Godbharai Ceremony Saree",
+        description: "Lightweight pure Kanjeevaram and Banarasi silks with gentle drape engineering and bespoke floral jewelry harmonization for the traditional baby shower ritual.",
+        imagePlaceholder: "/nehal/images/godbharai-saree.jpg"
+      },
+      {
+        name: "Ethereal Maternity Photoshoot Couture",
+        description: "Breathable pleated cape gowns, layered Chanderi anarkalis, and fluid pastel organza ensembles tailored for maximum comfort and high-fashion maternity portraits.",
+        imagePlaceholder: "/nehal/images/maternity-cape.jpg"
+      }
+    ],
+    services: [
+      {
+        title: "Ergonomic & Breathable Drape Customization",
+        description: "Weight-balanced lehengas, pre-pleated maternity sarees, and pressure-free waistbands engineered for effortless comfort during multi-hour rituals."
+      },
+      {
+        title: "Godbharai & Baby Shower Concept Styling",
+        description: "End-to-end ceremony styling, floral jewelry harmonization, family color synchronization, and maternity portraiture art direction."
+      }
+    ]
+  },
+  {
+    slug: "maternity-styling",
+    title: "Maternity & Godbharai Styling",
+    heroVideoOrImage: "/nehal/images/maternity-hero.jpg",
+    tagline: "SACRED CELEBRATIONS & LUMINOUS MATERNITY COUTURE",
+    manifesto: "Embrace the divine journey into motherhood with effortless poise, breathable silhouettes, and timeless opulence. Nehal curates bespoke Godbharai (baby shower) ceremony ensembles, weight-balanced heirloom silk drapes, and ethereal maternity photoshoot couture designed to celebrate your radiant glow.",
+    products: [
+      {
+        name: "The Sacred Godbharai Ceremony Saree",
+        description: "Lightweight pure Kanjeevaram and Banarasi silks with gentle drape engineering and bespoke floral jewelry harmonization for the traditional baby shower ritual.",
+        imagePlaceholder: "/nehal/images/godbharai-saree.jpg"
+      },
+      {
+        name: "Ethereal Maternity Photoshoot Couture",
+        description: "Breathable pleated cape gowns, layered Chanderi anarkalis, and fluid pastel organza ensembles tailored for maximum comfort and high-fashion maternity portraits.",
+        imagePlaceholder: "/nehal/images/maternity-cape.jpg"
+      }
+    ],
+    services: [
+      {
+        title: "Ergonomic & Breathable Drape Customization",
+        description: "Weight-balanced lehengas, pre-pleated maternity sarees, and pressure-free waistbands engineered for effortless comfort during multi-hour rituals."
+      },
+      {
+        title: "Godbharai & Baby Shower Concept Styling",
+        description: "End-to-end ceremony styling, floral jewelry harmonization, family color synchronization, and maternity portraiture art direction."
+      }
+    ]
+  },
+  {
     slug: "bridesmaids",
     title: "Bridesmaids & Groomsmen",
     heroVideoOrImage: "/nehal/images/bridesmaids-hero.jpg",

@@ -20,14 +20,15 @@ export default function Header() {
     { name: "The Bride", href: "/bride", description: "Bespoke bridal lehengas & trousseau styling" },
     { name: "The Groom", href: "/groom", description: "Royal sherwanis & artisanal tailoring" },
     { name: "Family", href: "/family", description: "Synchronized looks for parents & bridal party" },
-    { name: "NRI & Global Concierge", href: "/nri-styling", description: "Weddings for NRIs & international friends" },
-    { name: "Festivals", href: "/festivals", description: "Celebration edits & destination attire" },
+    { name: "NRI Bridal & Occasion Stylist", href: "/nri-styling", description: "Weddings & occasion styling for NRIs & international friends" },
+    { name: "Festivals & Occasions", href: "/festivals", description: "Celebration edits & destination attire" },
+    { name: "Maternity & Godbharai Styling", href: "/maternity", description: "Sacred baby shower rituals & maternity couture" },
   ];
 
   const imageStylistItems = [
     { name: "Style Transformation", href: "/image-stylist#transformation", description: "Personal color, silhouette & signature style discovery" },
     { name: "Wardrobe Redesign", href: "/image-stylist#wardrobe", description: "Closet audits, capsule curations & piece revitalizations" },
-    { name: "Luxury Style Coaching", href: "/image-stylist#coaching", description: "Mindset, presence & executive image elevation" },
+    { name: "Executive & Presence Styling", href: "/image-stylist#coaching", description: "Mindset, presence & executive image elevation" },
     { name: "Shopping Consulting", href: "/image-stylist#shopping", description: "VIP boutique access & personal styling accompaniment" },
   ];
 
@@ -178,7 +179,7 @@ export default function Header() {
             )}
           </div>
 
-          {/* NRI Styling */}
+          {/* NRI Occasion Stylist */}
           <Link
             href="/nri-styling"
             className={`text-xs uppercase tracking-[0.16em] font-medium transition-colors py-2 ${pathname === "/nri-styling"
@@ -186,7 +187,7 @@ export default function Header() {
               : "text-text-secondary hover:text-text-primary"
               }`}
           >
-            NRI Styling
+            NRI Occasion Stylist
           </Link>
 
           {/* About */}
@@ -319,7 +320,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(false)}
             className="py-2 text-sm uppercase tracking-[0.14em] font-medium text-text-primary border-b border-border-soft flex items-center justify-between"
           >
-            <span>NRI & Global Concierge</span>
+            <span>NRI Bridal & Occasion Stylist</span>
             <span className="text-xs text-text-gold">★ Global</span>
           </Link>
 

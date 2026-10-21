@@ -82,7 +82,7 @@ export default function FloatingBookingButton() {
           <div className="relative w-full h-full rounded-full overflow-hidden bg-pearl">
             <Image
               src="/nehal/avatar.png"
-              alt="Nehal Jhavveri Booking Concierge"
+              alt="Nehal Jhavveri Bridal & Occasion Stylist"
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
               sizes="64px"
@@ -195,7 +195,7 @@ export default function FloatingBookingButton() {
                             : "border-border-soft bg-silk text-text-secondary hover:border-border-main"
                         }`}
                       >
-                        <div className="text-xs uppercase tracking-wider font-semibold">3. NRI Concierge</div>
+                        <div className="text-xs uppercase tracking-wider font-semibold">3. NRI Occasion Stylist</div>
                         <div className="text-[10px] text-text-muted mt-0.5">Time-Zone & Global Friends</div>
                       </button>
                     </div>
