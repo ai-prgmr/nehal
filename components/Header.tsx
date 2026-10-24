@@ -8,21 +8,71 @@ import Image from "next/image";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [celebrationOpen, setCelebrationOpen] = useState(false);
+  const [desktopWeddingOpen, setDesktopWeddingOpen] = useState(false);
   const [imageStylistOpen, setImageStylistOpen] = useState(false);
   const [mobileCelebrationOpen, setMobileCelebrationOpen] = useState(false);
+  const [mobileWeddingOpen, setMobileWeddingOpen] = useState(false);
   const [mobileImageStylistOpen, setMobileImageStylistOpen] = useState(false);
 
   const pathname = usePathname();
   const celebrationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const weddingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const imageStylistTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const celebrationItems = [
-    { name: "The Bride", href: "/bride", description: "Bespoke bridal lehengas & trousseau styling" },
-    { name: "The Groom", href: "/groom", description: "Royal sherwanis & artisanal tailoring" },
-    { name: "Family", href: "/family", description: "Synchronized looks for parents & bridal party" },
-    { name: "NRI Bridal & Occasion Stylist", href: "/nri-styling", description: "Weddings & occasion styling for NRIs & international friends" },
-    { name: "Festivals & Occasions", href: "/festivals", description: "Celebration edits & destination attire" },
-    { name: "Maternity & Godbharai Styling", href: "/maternity", description: "Sacred baby shower rituals & maternity couture" },
+  interface SubmenuItem {
+    name: string;
+    href: string;
+    description: string;
+  }
+
+  interface CelebrationCategory {
+    name: string;
+    href: string;
+    description: string;
+    submenu?: SubmenuItem[];
+  }
+
+  const celebrationCategories: CelebrationCategory[] = [
+    {
+      name: "Engagement / Roka",
+      href: "/engagement",
+      description: "Ring ceremony rituals & intimate festive couture",
+    },
+    {
+      name: "Wedding",
+      href: "/wedding",
+      description: "The Bride, The Groom & The Family couture",
+      submenu: [
+        { name: "The Bride", href: "/bride", description: "Bespoke bridal lehengas & trousseau styling" },
+        { name: "The Groom", href: "/groom", description: "Royal sherwanis & artisanal tailoring" },
+        { name: "The Family", href: "/family", description: "Synchronized looks for parents & bridal party" },
+      ],
+    },
+    {
+      name: "Pre-Wedding Shoots",
+      href: "/pre-wedding",
+      description: "Cinematic outdoor concepts & high-fashion editorials",
+    },
+    {
+      name: "Post-Wedding Shoots",
+      href: "/post-wedding",
+      description: "Effortless reception glam & contemporary portraiture",
+    },
+    {
+      name: "GodBharai / Baby Shower",
+      href: "/godbharai",
+      description: "Sacred blessing rituals & heirloom silk drapes",
+    },
+    {
+      name: "Maternity Styling and Shoot",
+      href: "/maternity",
+      description: "Luminous maternity couture & photoshoot art direction",
+    },
+    {
+      name: "Festivals & Occasions",
+      href: "/festivals",
+      description: "Celebration edits, Diwali soirées & destination attire",
+    },
   ];
 
   const imageStylistItems = [
@@ -36,7 +86,9 @@ export default function Header() {
   useEffect(() => {
     setMobileMenuOpen(false);
     setCelebrationOpen(false);
+    setDesktopWeddingOpen(false);
     setImageStylistOpen(false);
+    setMobileWeddingOpen(false);
   }, [pathname]);
 
   const handleCelebrationEnter = () => {
@@ -47,6 +99,18 @@ export default function Header() {
   const handleCelebrationLeave = () => {
     celebrationTimeoutRef.current = setTimeout(() => {
       setCelebrationOpen(false);
+      setDesktopWeddingOpen(false);
+    }, 150);
+  };
+
+  const handleWeddingEnter = () => {
+    if (weddingTimeoutRef.current) clearTimeout(weddingTimeoutRef.current);
+    setDesktopWeddingOpen(true);
+  };
+
+  const handleWeddingLeave = () => {
+    weddingTimeoutRef.current = setTimeout(() => {
+      setDesktopWeddingOpen(false);
     }, 150);
   };
 
@@ -61,11 +125,14 @@ export default function Header() {
     }, 150);
   };
 
-  const isCelebrationActive = celebrationItems.some((item) => pathname === item.href);
+  const allCelebrationHrefs = celebrationCategories.flatMap((item) =>
+    item.submenu ? [item.href, ...item.submenu.map((s) => s.href)] : [item.href]
+  );
+  const isCelebrationActive = allCelebrationHrefs.some((href) => pathname === href);
   const isImageStylistActive = pathname === "/image-stylist" || pathname.startsWith("/image-stylist");
 
   return (
-    <header className="sticky top-0 left-0 w-full z-50 bg-silk/95 backdrop-blur-md border-b border-border-main transition-all duration-300 px-6 lg:px-12 py-3.5">
+    <header className="w-full z-50 bg-silk/95 backdrop-blur-md border-b border-border-main transition-all duration-300 px-6 lg:px-12 py-3.5">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Logo */}
         <Link
@@ -74,11 +141,11 @@ export default function Header() {
           aria-label="Nehal Jhavveri Homepage"
         >
           <Image
-            src="/nehal/nehal-jhavveri-logo.png"
+            src="/nehal/test-logo-removebg.png"
             alt="Nehal Jhavveri logo"
-            width={500}
-            height={98}
-            className="w-100 h-19.5 max-w-[calc(100vw-110px)] sm:max-w-100 md:max-w-none md:w-125 md:h-24.5 object-contain"
+            width={300}
+            height={300}
+            className="object-contain"
             priority
           />
         </Link>
@@ -159,21 +226,120 @@ export default function Header() {
 
             {/* Celebration Dropdown Menu */}
             {celebrationOpen && (
-              <div className="absolute top-full -left-4 w-72 pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                <div className="bg-silk border border-border-main shadow-[0_15px_45px_rgba(63,58,50,0.08)] py-3 px-2 rounded-xs">
-                  {celebrationItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`block px-4 py-2.5 rounded-xs transition-all ${pathname === item.href
-                        ? "bg-warm-white text-text-primary"
-                        : "text-text-secondary hover:bg-ivory hover:text-text-primary"
-                        }`}
-                    >
-                      <div className="text-xs uppercase tracking-[0.14em] font-medium">{item.name}</div>
-                      <div className="text-[11px] text-text-muted mt-0.5 leading-snug">{item.description}</div>
-                    </Link>
-                  ))}
+              <div className="absolute top-full -left-4 w-80 pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="bg-silk border border-border-main shadow-[0_15px_45px_rgba(63,58,50,0.12)] py-2.5 px-2 rounded-xs">
+                  {celebrationCategories.map((item) => {
+                    if (item.submenu) {
+                      const isSubmenuActive =
+                        item.submenu.some((sub) => pathname === sub.href) || pathname === item.href;
+
+                      return (
+                        <div
+                          key={item.name}
+                          className="relative"
+                          onMouseEnter={handleWeddingEnter}
+                          onMouseLeave={handleWeddingLeave}
+                        >
+                          <div
+                            className={`flex items-center justify-between px-4 py-2.5 rounded-xs transition-all cursor-pointer ${isSubmenuActive || desktopWeddingOpen
+                              ? "bg-warm-white text-text-primary"
+                              : "text-text-secondary hover:bg-ivory hover:text-text-primary"
+                              }`}
+                          >
+                            <Link href={item.href} className="flex-1 pr-2">
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs uppercase tracking-[0.14em] font-medium text-text-primary">
+                                  {item.name}
+                                </span>
+                              </div>
+                              <div className="text-[11px] text-text-muted mt-0.5 leading-snug">
+                                {item.description}
+                              </div>
+                            </Link>
+
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setDesktopWeddingOpen(!desktopWeddingOpen);
+                              }}
+                              aria-label="Toggle Wedding submenu"
+                              className="p-1 hover:bg-champagne-light/40 rounded-xs text-text-muted hover:text-text-gold transition-colors"
+                            >
+                              <svg
+                                className={`w-3.5 h-3.5 transition-transform duration-200 ${desktopWeddingOpen ? "translate-x-0.5 text-text-gold" : ""
+                                  }`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                          </div>
+
+                          {/* Desktop Nested Submenu Flyout */}
+                          {desktopWeddingOpen && (
+                            <div
+                              className="absolute left-full top-0 ml-1.5 w-76 pt-0 z-50 animate-in fade-in slide-in-from-left-2 duration-150"
+                              onMouseEnter={handleWeddingEnter}
+                              onMouseLeave={handleWeddingLeave}
+                            >
+                              {/* Invisible bridge to prevent pointer gap drop */}
+                              <div className="absolute -left-3 top-0 w-4 h-full" />
+                              <div className="bg-silk border border-border-main shadow-[0_15px_45px_rgba(63,58,50,0.16)] py-2.5 px-2 rounded-xs">
+                                <div className="px-3.5 py-1 mb-1 text-[10px] uppercase tracking-[0.18em] text-text-gold font-medium border-b border-border-soft flex items-center justify-between">
+                                  <span>Wedding Submenu</span>
+                                  <span className="text-[9px] text-text-muted font-normal">3 Curations</span>
+                                </div>
+                                {item.submenu.map((sub) => (
+                                  <Link
+                                    key={sub.name}
+                                    href={sub.href}
+                                    className={`block px-3.5 py-2.5 rounded-xs transition-all ${pathname === sub.href
+                                      ? "bg-warm-white text-text-primary font-medium"
+                                      : "text-text-secondary hover:bg-ivory hover:text-text-primary"
+                                      }`}
+                                  >
+                                    <div className="text-xs uppercase tracking-[0.14em] font-medium flex items-center justify-between">
+                                      <span>{sub.name}</span>
+                                      <span className="text-text-gold text-xs">→</span>
+                                    </div>
+                                    <div className="text-[11px] text-text-muted mt-0.5 leading-snug">
+                                      {sub.description}
+                                    </div>
+                                  </Link>
+                                ))}
+                                <div className="pt-2 mt-2 border-t border-border-soft px-3.5">
+                                  <Link
+                                    href={item.href}
+                                    className="text-[11px] uppercase tracking-[0.16em] text-text-gold hover:text-text-primary font-medium flex items-center justify-between"
+                                  >
+                                    <span>All Wedding Couture</span>
+                                    <span>→</span>
+                                  </Link>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className={`block px-4 py-2.5 rounded-xs transition-all ${pathname === item.href
+                          ? "bg-warm-white text-text-primary font-medium"
+                          : "text-text-secondary hover:bg-ivory hover:text-text-primary"
+                          }`}
+                      >
+                        <div className="text-xs uppercase tracking-[0.14em] font-medium">{item.name}</div>
+                        <div className="text-[11px] text-text-muted mt-0.5 leading-snug">{item.description}</div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -187,7 +353,7 @@ export default function Header() {
               : "text-text-secondary hover:text-text-primary"
               }`}
           >
-            NRI Occasion Stylist
+            NRI Stylist
           </Link>
 
           {/* About */}
@@ -260,17 +426,68 @@ export default function Header() {
               </svg>
             </button>
             {mobileCelebrationOpen && (
-              <div className="pl-3 pt-2 space-y-3">
-                {celebrationItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs uppercase tracking-[0.12em] text-text-secondary hover:text-text-gold py-1"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              <div className="pl-2 pt-2 space-y-2">
+                {celebrationCategories.map((item) => {
+                  if (item.submenu) {
+                    return (
+                      <div key={item.name} className="py-1">
+                        <button
+                          type="button"
+                          onClick={() => setMobileWeddingOpen(!mobileWeddingOpen)}
+                          className="flex items-center justify-between w-full text-xs uppercase tracking-[0.12em] text-text-primary font-medium py-1.5 px-2 rounded-xs hover:bg-ivory transition-colors"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span>{item.name}</span>
+                            <span className="text-[9px] uppercase tracking-[0.1em] px-1.5 py-0.5 bg-champagne-light/60 text-text-gold rounded-full font-normal">
+                              Submenu
+                            </span>
+                          </div>
+                          <svg
+                            className={`w-3.5 h-3.5 text-text-muted transition-transform duration-200 ${mobileWeddingOpen ? "rotate-180" : ""}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+
+                        {mobileWeddingOpen && (
+                          <div className="pl-4 pr-2 pt-1 pb-1 space-y-2 border-l-2 border-champagne/40 ml-3 my-1">
+                            {item.submenu.map((sub) => (
+                              <Link
+                                key={sub.name}
+                                href={sub.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block text-xs uppercase tracking-[0.12em] text-text-secondary hover:text-text-gold py-1"
+                              >
+                                • {sub.name}
+                              </Link>
+                            ))}
+                            <Link
+                              href={item.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block text-[11px] uppercase tracking-[0.12em] text-text-gold font-medium pt-1"
+                            >
+                              View All Wedding Couture →
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-xs uppercase tracking-[0.12em] text-text-secondary hover:text-text-gold py-1.5 px-2 rounded-xs"
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </div>
             )}
           </div>

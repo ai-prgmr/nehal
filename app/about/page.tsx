@@ -16,7 +16,7 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            
+
             {/* Image Column (First on Mobile) */}
             <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center w-full">
               <div className="relative w-full max-w-[320px] sm:max-w-90 md:max-w-100 aspect-4/5 image-frame shadow-[0_20px_60px_rgba(63,58,50,0.12)] border border-border-main bg-warm-white">
@@ -53,7 +53,7 @@ export default function AboutPage() {
                   Image styling is about uplifting your self-confidence every time you step into public.
                 </p>
                 <p>
-                  My philosophy is deeply rooted in the belief that personal style is far beyond clothes—it is a visual language that commands respect and radiates authentic self-worth. Whether preparing an executive for a high-stakes keynote or guiding a bride through her 3-month wedding styling timeline, I focus on empowering your presence.
+                  My philosophy is deeply rooted in the belief that personal style is far beyond clothes—it is a visual language that commands respect and radiates authentic self-worth. Whether preparing an executive for a high-stakes keynote or guiding a bride through her wedding journey, I focus on empowering your presence.
                 </p>
                 <p>
                   Through head-to-toe evaluation—covering hair/grooming, facial framing, posture, skin/color profiling, and silhouette tailoring—I help you cultivate an effortless image that feels natural and commanding.
@@ -120,9 +120,9 @@ export default function AboutPage() {
             </div>
 
             <div className="card-editorial p-8 space-y-4 bg-silk">
-              <h3 className="font-serif text-2xl text-text-primary">3-Month Wedding Prep</h3>
+              <h3 className="font-serif text-2xl text-text-primary">Stronger Personality</h3>
               <p className="text-xs sm:text-sm text-text-secondary font-light leading-relaxed">
-                Commencing 3 months before celebrations to understand needs, resolve fit/body concerns, and harmonize family ensembles.
+                Developing a strong personal presence that reflects confidence and self-worth.
               </p>
             </div>
           </div>

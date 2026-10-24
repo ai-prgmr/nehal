@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="md:col-span-2 md:pr-10">
           <Link href="/" className="inline-block mb-6">
             <Image
-              src="/nehal/nehal-jhavveri-logo.png"
+              src="/nehal/test-logo-removebg.png"
               alt="Nehal Jhavveri"
-              width={500}
-              height={98}
-              className="w-100 h-19.5 max-w-full md:w-125 md:h-24.5 object-contain"
+              width={300}
+              height={300}
+              className="object-contain"
             />
           </Link>
           <p className="text-sm font-light text-text-secondary leading-relaxed max-w-sm mb-6">
@@ -35,33 +35,38 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3 font-light text-sm">
             <li>
-              <Link href="/bride" className="hover:text-text-primary transition-colors duration-200">
-                The Bride
+              <Link href="/engagement" className="hover:text-text-primary transition-colors duration-200">
+                Engagement / Roka
               </Link>
             </li>
             <li>
-              <Link href="/groom" className="hover:text-text-primary transition-colors duration-200">
-                The Groom
+              <Link href="/wedding" className="hover:text-text-primary transition-colors duration-200">
+                Wedding (Bride, Groom, Family)
               </Link>
             </li>
             <li>
-              <Link href="/family" className="hover:text-text-primary transition-colors duration-200">
-                The Family
+              <Link href="/pre-wedding" className="hover:text-text-primary transition-colors duration-200">
+                Pre-Wedding Shoots
               </Link>
             </li>
             <li>
-              <Link href="/nri-styling" className="hover:text-text-primary transition-colors duration-200 text-text-gold font-medium">
-                NRI Bridal & Occasion Stylist
+              <Link href="/post-wedding" className="hover:text-text-primary transition-colors duration-200">
+                Post-Wedding Shoots
+              </Link>
+            </li>
+            <li>
+              <Link href="/godbharai" className="hover:text-text-primary transition-colors duration-200">
+                GodBharai / Baby Shower
+              </Link>
+            </li>
+            <li>
+              <Link href="/maternity" className="hover:text-text-primary transition-colors duration-200">
+                Maternity Styling and Shoot
               </Link>
             </li>
             <li>
               <Link href="/festivals" className="hover:text-text-primary transition-colors duration-200">
                 Festivals & Occasions
-              </Link>
-            </li>
-            <li>
-              <Link href="/maternity" className="hover:text-text-primary transition-colors duration-200">
-                Maternity & Godbharai
               </Link>
             </li>
           </ul>
@@ -105,6 +110,11 @@ export default function Footer() {
             <li>
               <Link href="/about" className="hover:text-text-primary transition-colors duration-200">
                 Meet Nehal
+              </Link>
+            </li>
+            <li>
+              <Link href="/nri-styling" className="hover:text-text-primary transition-colors duration-200 text-text-gold font-medium">
+                NRI Occasion Stylist
               </Link>
             </li>
             <li>

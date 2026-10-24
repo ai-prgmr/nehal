@@ -1,25 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
-import { Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import React from "react";
+import { Mail, MapPin } from "lucide-react";
+import ConsultationForm from "@/components/ConsultationForm";
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
-  };
-
-  const inputClasses =
-    "w-full border border-border-main rounded-sm px-4 py-3.5 bg-silk hover:bg-white focus:bg-white focus:outline-none focus:ring-1 focus:ring-text-gold focus:border-text-gold transition-all duration-300 text-text-primary placeholder:text-text-muted text-sm";
-  const labelClasses = "block text-xs font-medium uppercase tracking-[0.14em] text-text-secondary mb-1.5";
-
   return (
     <main className="min-h-screen bg-ivory text-text-primary font-sans selection:bg-champagne selection:text-text-primary">
       {/* 1. Page Header (Editorial Invitation) */}
@@ -91,112 +74,18 @@ export default function ContactPage() {
 
           {/* Right Column: The Inquiry Form */}
           <div className="lg:col-span-7">
-            <div className="card-editorial p-8 sm:p-12 bg-silk shadow-[0_15px_45px_rgba(63,58,50,0.08)]">
-              {isSuccess ? (
-                <div className="h-full min-h-112.5 flex flex-col items-center justify-center text-center space-y-6 animate-in fade-in zoom-in duration-700">
-                  <div className="w-20 h-20 bg-champagne-light/50 rounded-full flex items-center justify-center mb-2 border border-champagne-deep">
-                    <CheckCircle2 className="w-10 h-10 text-text-gold" />
-                  </div>
-                  <h3 className="text-3xl font-serif text-text-primary">Thank You</h3>
-                  <p className="text-text-secondary text-base max-w-md leading-relaxed font-light">
-                    Your inquiry has been received. Our styling team will connect with you via email within 24 hours.
-                  </p>
+            <div className="card-editorial p-6 sm:p-10 bg-silk shadow-[0_15px_45px_rgba(63,58,50,0.08)]">
+              <div className="space-y-1.5 pb-5 mb-5 border-b border-border-soft">
+                <div className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-text-gold font-medium">
+                  <span>Atelier Consultation Booking</span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6 animate-in fade-in duration-500">
-                  <div className="space-y-2 pb-4 border-b border-border-soft">
-                    <h2 className="text-2xl sm:text-3xl font-serif text-text-primary">Schedule a Consultation</h2>
-                    <p className="text-text-secondary text-xs font-light">Please share your details below for our atelier team.</p>
-                  </div>
+                <h2 className="text-2xl sm:text-3xl font-serif text-text-primary">Schedule a Consultation</h2>
+                <p className="text-text-secondary text-xs font-light">
+                  Select your styling focus, choose services or ceremonies, and share your timeline with Nehal.
+                </p>
+              </div>
 
-                  <div className="space-y-5">
-                    {/* Full Name */}
-                    <div>
-                      <label htmlFor="name" className={labelClasses}>Full Name</label>
-                      <input
-                        required
-                        type="text"
-                        id="name"
-                        className={inputClasses}
-                        placeholder="e.g. Ananya Sharma"
-                      />
-                    </div>
-
-                    {/* Email Address */}
-                    <div>
-                      <label htmlFor="email" className={labelClasses}>Email Address</label>
-                      <input
-                        required
-                        type="email"
-                        id="email"
-                        className={inputClasses}
-                        placeholder="ananya@example.com"
-                      />
-                    </div>
-
-                    {/* Event Date and Program Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="date" className={labelClasses}>Target Date (Optional)</label>
-                        <input
-                          type="date"
-                          id="date"
-                          className={`${inputClasses} appearance-none min-h-11.5`}
-                        />
-                      </div>
-                      <div className="relative">
-                        <label htmlFor="type" className={labelClasses}>Styling Program</label>
-                        <select
-                          id="type"
-                          className={`${inputClasses} appearance-none pr-10`}
-                        >
-                          <option value="bride">The Bride (Couture & Trousseau)</option>
-                          <option value="groom">The Groom (Sherwani & Tailoring)</option>
-                          <option value="family">Family Package</option>
-                          <option value="transformation">Style Transformation</option>
-                          <option value="wardrobe">Wardrobe Redesign</option>
-                          <option value="coaching">Executive & Presence Styling</option>
-                          <option value="shopping">Shopping Consulting</option>
-                          <option value="festivals">Festivals & Destination Occasions</option>
-                          <option value="maternity">Maternity & Godbharai Styling</option>
-                          <option value="nri">NRI Bridal & Occasion Styling</option>
-                        </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 pt-6 text-text-muted">
-                          <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Vision / Notes */}
-                    <div>
-                      <label htmlFor="vision" className={labelClasses}>Your Vision or Requirements</label>
-                      <textarea
-                        id="vision"
-                        rows={4}
-                        className={`${inputClasses} resize-none`}
-                        placeholder="Tell us about your wedding events, wardrobe goals, or specific styling requirements..."
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    disabled={isSubmitting}
-                    type="submit"
-                    className="button-primary w-full py-4! text-xs tracking-[0.2em] font-medium flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Submitting Details...</span>
-                      </>
-                    ) : (
-                      <span>Request Private Consultation</span>
-                    )}
-                  </button>
-                </form>
-              )}
+              <ConsultationForm />
             </div>
           </div>
           

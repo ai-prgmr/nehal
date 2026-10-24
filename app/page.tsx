@@ -268,7 +268,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {categories.filter((c) => c.slug !== "maternity-styling").map((category) => (
+              {categories.filter((c) => !["maternity-styling", "wedding", "bridesmaids"].includes(c.slug)).map((category) => (
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
